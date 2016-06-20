@@ -1,0 +1,506 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		513411C71D14FEAC00DC684D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513411C61D14FEAC00DC684D /* AppDelegate.swift */; };
+		513411CC1D14FEAC00DC684D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 513411CA1D14FEAC00DC684D /* Main.storyboard */; };
+		513411CE1D14FEAC00DC684D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 513411CD1D14FEAC00DC684D /* Assets.xcassets */; };
+		513411D11D14FEAC00DC684D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 513411CF1D14FEAC00DC684D /* LaunchScreen.storyboard */; };
+		513411DD1D14FFBA00DC684D /* LogInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513411DC1D14FFBA00DC684D /* LogInVC.swift */; };
+		513411DF1D14FFC900DC684D /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513411DE1D14FFC900DC684D /* SignUpVC.swift */; };
+		513411E31D1501AE00DC684D /* CreateRoomVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513411E21D1501AE00DC684D /* CreateRoomVC.swift */; };
+		513411E51D1501D000DC684D /* RoomCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513411E41D1501D000DC684D /* RoomCollectionVC.swift */; };
+		513411E71D1502A700DC684D /* ProfileTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513411E61D1502A700DC684D /* ProfileTableVC.swift */; };
+		51D9C5441D17E6F900C0097B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D9C5431D17E6F900C0097B /* Constants.swift */; };
+		51D9C5461D1830EF00C0097B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D9C5451D1830EF00C0097B /* User.swift */; };
+		51F10B871D1668D800FA9FC0 /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F10B861D1668D800FA9FC0 /* ChatTableViewCell.swift */; };
+		51F10B891D16A06900FA9FC0 /* JSQChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F10B881D16A06900FA9FC0 /* JSQChatVC.swift */; };
+		51F396F91D15215D0014CDCE /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F396F81D15215D0014CDCE /* ChatVC.swift */; };
+		51F396FD1D152D1D0014CDCE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 51F396FC1D152D1D0014CDCE /* GoogleService-Info.plist */; };
+		51F396FF1D153E510014CDCE /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F396FE1D153E510014CDCE /* DataService.swift */; };
+		51F397071D15460A0014CDCE /* ProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 51F397041D15460A0014CDCE /* ProgressHUD.bundle */; };
+		51F397081D15460A0014CDCE /* ProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 51F397061D15460A0014CDCE /* ProgressHUD.m */; };
+		51F3970A1D1565190014CDCE /* RoomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F397091D1565190014CDCE /* RoomCollectionViewCell.swift */; };
+		51F3970C1D1566FA0014CDCE /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F3970B1D1566FA0014CDCE /* Room.swift */; };
+		FA004C4B86A58DE13DBAACAD /* Pods_iMessageClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 510C85A0659EED04622AA72D /* Pods_iMessageClone.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		463DDB3D579D1E2D9D12CE2C /* Pods-iMessageClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iMessageClone.release.xcconfig"; path = "Pods/Target Support Files/Pods-iMessageClone/Pods-iMessageClone.release.xcconfig"; sourceTree = "<group>"; };
+		510C85A0659EED04622AA72D /* Pods_iMessageClone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iMessageClone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		513411C31D14FEAC00DC684D /* iMessageClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iMessageClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		513411C61D14FEAC00DC684D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		513411CB1D14FEAC00DC684D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		513411CD1D14FEAC00DC684D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		513411D01D14FEAC00DC684D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		513411D21D14FEAC00DC684D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		513411DC1D14FFBA00DC684D /* LogInVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInVC.swift; sourceTree = "<group>"; };
+		513411DE1D14FFC900DC684D /* SignUpVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
+		513411E21D1501AE00DC684D /* CreateRoomVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateRoomVC.swift; sourceTree = "<group>"; };
+		513411E41D1501D000DC684D /* RoomCollectionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomCollectionVC.swift; sourceTree = "<group>"; };
+		513411E61D1502A700DC684D /* ProfileTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTableVC.swift; sourceTree = "<group>"; };
+		51D9C5431D17E6F900C0097B /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		51D9C5451D1830EF00C0097B /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		51F10B861D1668D800FA9FC0 /* ChatTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
+		51F10B881D16A06900FA9FC0 /* JSQChatVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSQChatVC.swift; sourceTree = "<group>"; };
+		51F396F81D15215D0014CDCE /* ChatVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
+		51F396FC1D152D1D0014CDCE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		51F396FE1D153E510014CDCE /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		51F397001D15456F0014CDCE /* iMessageClone-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iMessageClone-Bridging-Header.h"; sourceTree = "<group>"; };
+		51F397041D15460A0014CDCE /* ProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ProgressHUD.bundle; sourceTree = "<group>"; };
+		51F397051D15460A0014CDCE /* ProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressHUD.h; sourceTree = "<group>"; };
+		51F397061D15460A0014CDCE /* ProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressHUD.m; sourceTree = "<group>"; };
+		51F397091D1565190014CDCE /* RoomCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomCollectionViewCell.swift; sourceTree = "<group>"; };
+		51F3970B1D1566FA0014CDCE /* Room.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
+		ECF848776EDBD22841161125 /* Pods-iMessageClone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iMessageClone.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iMessageClone/Pods-iMessageClone.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		513411C01D14FEAC00DC684D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA004C4B86A58DE13DBAACAD /* Pods_iMessageClone.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		513411BA1D14FEAC00DC684D = {
+			isa = PBXGroup;
+			children = (
+				513411C51D14FEAC00DC684D /* iMessageClone */,
+				513411C41D14FEAC00DC684D /* Products */,
+				62B7B1FBB37D0861CDD643B8 /* Pods */,
+				F9D3BDAD2F1CDF56A0C6D155 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		513411C41D14FEAC00DC684D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				513411C31D14FEAC00DC684D /* iMessageClone.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		513411C51D14FEAC00DC684D /* iMessageClone */ = {
+			isa = PBXGroup;
+			children = (
+				513411DA1D14FF5500DC684D /* Model */,
+				513411D91D14FF4F00DC684D /* View */,
+				513411D81D14FF4700DC684D /* Controller */,
+				513411DB1D14FF6700DC684D /* Supporting Files */,
+				51D9C5421D17E6D200C0097B /* Constants */,
+			);
+			path = iMessageClone;
+			sourceTree = "<group>";
+		};
+		513411D81D14FF4700DC684D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				513411CA1D14FEAC00DC684D /* Main.storyboard */,
+				51F396FA1D152B620014CDCE /* Authentication */,
+				51F396FB1D152B710014CDCE /* Chat Room */,
+				51F3970D1D15B7FC0014CDCE /* Profile */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		513411D91D14FF4F00DC684D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				51F397091D1565190014CDCE /* RoomCollectionViewCell.swift */,
+				51F10B861D1668D800FA9FC0 /* ChatTableViewCell.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		513411DA1D14FF5500DC684D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				51F396FE1D153E510014CDCE /* DataService.swift */,
+				51F3970B1D1566FA0014CDCE /* Room.swift */,
+				51D9C5451D1830EF00C0097B /* User.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		513411DB1D14FF6700DC684D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				51F397041D15460A0014CDCE /* ProgressHUD.bundle */,
+				51F397051D15460A0014CDCE /* ProgressHUD.h */,
+				51F397061D15460A0014CDCE /* ProgressHUD.m */,
+				513411C61D14FEAC00DC684D /* AppDelegate.swift */,
+				513411CD1D14FEAC00DC684D /* Assets.xcassets */,
+				513411CF1D14FEAC00DC684D /* LaunchScreen.storyboard */,
+				513411D21D14FEAC00DC684D /* Info.plist */,
+				51F396FC1D152D1D0014CDCE /* GoogleService-Info.plist */,
+				51F397001D15456F0014CDCE /* iMessageClone-Bridging-Header.h */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		51D9C5421D17E6D200C0097B /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				51D9C5431D17E6F900C0097B /* Constants.swift */,
+			);
+			name = Constants;
+			sourceTree = "<group>";
+		};
+		51F396FA1D152B620014CDCE /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				513411DC1D14FFBA00DC684D /* LogInVC.swift */,
+				513411DE1D14FFC900DC684D /* SignUpVC.swift */,
+			);
+			name = Authentication;
+			sourceTree = "<group>";
+		};
+		51F396FB1D152B710014CDCE /* Chat Room */ = {
+			isa = PBXGroup;
+			children = (
+				513411E41D1501D000DC684D /* RoomCollectionVC.swift */,
+				513411E21D1501AE00DC684D /* CreateRoomVC.swift */,
+				51F396F81D15215D0014CDCE /* ChatVC.swift */,
+				51F10B881D16A06900FA9FC0 /* JSQChatVC.swift */,
+			);
+			name = "Chat Room";
+			sourceTree = "<group>";
+		};
+		51F3970D1D15B7FC0014CDCE /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				513411E61D1502A700DC684D /* ProfileTableVC.swift */,
+			);
+			name = Profile;
+			sourceTree = "<group>";
+		};
+		62B7B1FBB37D0861CDD643B8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				ECF848776EDBD22841161125 /* Pods-iMessageClone.debug.xcconfig */,
+				463DDB3D579D1E2D9D12CE2C /* Pods-iMessageClone.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F9D3BDAD2F1CDF56A0C6D155 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				510C85A0659EED04622AA72D /* Pods_iMessageClone.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		513411C21D14FEAC00DC684D /* iMessageClone */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 513411D51D14FEAC00DC684D /* Build configuration list for PBXNativeTarget "iMessageClone" */;
+			buildPhases = (
+				55315C0266D6834AE1E3A6A6 /* [CP] Check Pods Manifest.lock */,
+				513411BF1D14FEAC00DC684D /* Sources */,
+				513411C01D14FEAC00DC684D /* Frameworks */,
+				513411C11D14FEAC00DC684D /* Resources */,
+				2B6E8850D6A1EF9279294076 /* [CP] Embed Pods Frameworks */,
+				374AFEF6AC649AE74F06FB51 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iMessageClone;
+			productName = iMessageClone;
+			productReference = 513411C31D14FEAC00DC684D /* iMessageClone.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		513411BB1D14FEAC00DC684D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Tien Nguyen";
+				TargetAttributes = {
+					513411C21D14FEAC00DC684D = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 513411BE1D14FEAC00DC684D /* Build configuration list for PBXProject "iMessageClone" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 513411BA1D14FEAC00DC684D;
+			productRefGroup = 513411C41D14FEAC00DC684D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				513411C21D14FEAC00DC684D /* iMessageClone */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		513411C11D14FEAC00DC684D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				513411D11D14FEAC00DC684D /* LaunchScreen.storyboard in Resources */,
+				51F396FD1D152D1D0014CDCE /* GoogleService-Info.plist in Resources */,
+				513411CE1D14FEAC00DC684D /* Assets.xcassets in Resources */,
+				51F397071D15460A0014CDCE /* ProgressHUD.bundle in Resources */,
+				513411CC1D14FEAC00DC684D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2B6E8850D6A1EF9279294076 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iMessageClone/Pods-iMessageClone-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		374AFEF6AC649AE74F06FB51 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iMessageClone/Pods-iMessageClone-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		55315C0266D6834AE1E3A6A6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		513411BF1D14FEAC00DC684D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				513411E31D1501AE00DC684D /* CreateRoomVC.swift in Sources */,
+				51F3970A1D1565190014CDCE /* RoomCollectionViewCell.swift in Sources */,
+				51F3970C1D1566FA0014CDCE /* Room.swift in Sources */,
+				51F396F91D15215D0014CDCE /* ChatVC.swift in Sources */,
+				51F397081D15460A0014CDCE /* ProgressHUD.m in Sources */,
+				51D9C5441D17E6F900C0097B /* Constants.swift in Sources */,
+				513411E71D1502A700DC684D /* ProfileTableVC.swift in Sources */,
+				513411DD1D14FFBA00DC684D /* LogInVC.swift in Sources */,
+				51D9C5461D1830EF00C0097B /* User.swift in Sources */,
+				51F10B891D16A06900FA9FC0 /* JSQChatVC.swift in Sources */,
+				513411DF1D14FFC900DC684D /* SignUpVC.swift in Sources */,
+				513411C71D14FEAC00DC684D /* AppDelegate.swift in Sources */,
+				513411E51D1501D000DC684D /* RoomCollectionVC.swift in Sources */,
+				51F10B871D1668D800FA9FC0 /* ChatTableViewCell.swift in Sources */,
+				51F396FF1D153E510014CDCE /* DataService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		513411CA1D14FEAC00DC684D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				513411CB1D14FEAC00DC684D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		513411CF1D14FEAC00DC684D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				513411D01D14FEAC00DC684D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		513411D31D14FEAC00DC684D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		513411D41D14FEAC00DC684D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		513411D61D14FEAC00DC684D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ECF848776EDBD22841161125 /* Pods-iMessageClone.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = iMessageClone/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = tiennguyen.ftu.k52.iMessageClone;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "iMessageClone/iMessageClone-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		513411D71D14FEAC00DC684D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 463DDB3D579D1E2D9D12CE2C /* Pods-iMessageClone.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = iMessageClone/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = tiennguyen.ftu.k52.iMessageClone;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "iMessageClone/iMessageClone-Bridging-Header.h";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		513411BE1D14FEAC00DC684D /* Build configuration list for PBXProject "iMessageClone" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				513411D31D14FEAC00DC684D /* Debug */,
+				513411D41D14FEAC00DC684D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		513411D51D14FEAC00DC684D /* Build configuration list for PBXNativeTarget "iMessageClone" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				513411D61D14FEAC00DC684D /* Debug */,
+				513411D71D14FEAC00DC684D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 513411BB1D14FEAC00DC684D /* Project object */;
+}

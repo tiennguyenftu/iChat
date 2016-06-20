@@ -1,0 +1,6 @@
+framework module Pods_iMessageClone {
+  umbrella header "Pods-iMessageClone-umbrella.h"
+
+  export *
+  module * { export * }
+}
