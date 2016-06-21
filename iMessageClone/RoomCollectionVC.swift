@@ -28,12 +28,13 @@ class RoomCollectionVC: UICollectionViewController, UICollectionViewDelegateFlow
             self.collectionView?.insertItemsAtIndexPaths([indexPath])
         }
         
-        DataService.dataService.getAllUserProfiles()
-        
     }
+    
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
+        
+        DataService.dataService.getAllUserProfiles()
        
         if let user = DataService.dataService.currentUser {
             guard let photoURL = user.photoURL else {

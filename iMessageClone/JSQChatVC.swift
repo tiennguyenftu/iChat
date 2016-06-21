@@ -91,10 +91,6 @@ class JSQChatVC: JSQMessagesViewController {
             as! JSQMessagesCollectionViewCell
         
         let message = messages[indexPath.item]
-//        cell.avatarImageView.layer.cornerRadius = kJSQMessagesCollectionViewAvatarSizeDefault / 2
-//        cell.avatarImageView.clipsToBounds = true
-//        cell.avatarImageView.image = UIImage(named: "profileImage")
-        
         
         if message.senderId == senderId {
             if let textView = cell.textView {
@@ -131,16 +127,18 @@ class JSQChatVC: JSQMessagesViewController {
     override func collectionView(collectionView: JSQMessagesCollectionView!,
                                  avatarImageDataForItemAtIndexPath indexPath: NSIndexPath!) -> JSQMessageAvatarImageDataSource! {
         
-        let avatar = JSQMessagesAvatarImage(avatarImage: nil, highlightedImage: nil, placeholderImage: UIImage(named: "profileImage"))
+        var avatarImage = UIImage()
         let message = messages[indexPath.item]
         if message.senderId == senderId {
-            avatar.avatarImage = outgoingImage
+            avatarImage = outgoingImage
         } else {
             let imageData = DataService.dataService.allProfileImage[message.senderId]
-            avatar.avatarImage = UIImage.init(data: imageData!)
+            avatarImage = UIImage(data: imageData!)!
         }
         
-        return avatar
+        let circularAvatar = JSQMessagesAvatarImageFactory.circularAvatarImage(avatarImage, withDiameter: UInt(kJSQMessagesCollectionViewAvatarSizeDefault))
+        
+        return JSQMessagesAvatarImage(avatarImage: circularAvatar, highlightedImage: circularAvatar, placeholderImage: UIImage(named: "profileImage"))
     }
     
     

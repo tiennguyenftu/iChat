@@ -18,9 +18,7 @@
 		513411E71D1502A700DC684D /* ProfileTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513411E61D1502A700DC684D /* ProfileTableVC.swift */; };
 		51D9C5441D17E6F900C0097B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D9C5431D17E6F900C0097B /* Constants.swift */; };
 		51D9C5461D1830EF00C0097B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D9C5451D1830EF00C0097B /* User.swift */; };
-		51F10B871D1668D800FA9FC0 /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F10B861D1668D800FA9FC0 /* ChatTableViewCell.swift */; };
 		51F10B891D16A06900FA9FC0 /* JSQChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F10B881D16A06900FA9FC0 /* JSQChatVC.swift */; };
-		51F396F91D15215D0014CDCE /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F396F81D15215D0014CDCE /* ChatVC.swift */; };
 		51F396FD1D152D1D0014CDCE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 51F396FC1D152D1D0014CDCE /* GoogleService-Info.plist */; };
 		51F396FF1D153E510014CDCE /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F396FE1D153E510014CDCE /* DataService.swift */; };
 		51F397071D15460A0014CDCE /* ProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 51F397041D15460A0014CDCE /* ProgressHUD.bundle */; };
@@ -46,9 +44,7 @@
 		513411E61D1502A700DC684D /* ProfileTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTableVC.swift; sourceTree = "<group>"; };
 		51D9C5431D17E6F900C0097B /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		51D9C5451D1830EF00C0097B /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		51F10B861D1668D800FA9FC0 /* ChatTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
 		51F10B881D16A06900FA9FC0 /* JSQChatVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSQChatVC.swift; sourceTree = "<group>"; };
-		51F396F81D15215D0014CDCE /* ChatVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
 		51F396FC1D152D1D0014CDCE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		51F396FE1D153E510014CDCE /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		51F397001D15456F0014CDCE /* iMessageClone-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iMessageClone-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -117,7 +113,6 @@
 			isa = PBXGroup;
 			children = (
 				51F397091D1565190014CDCE /* RoomCollectionViewCell.swift */,
-				51F10B861D1668D800FA9FC0 /* ChatTableViewCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -170,7 +165,6 @@
 			children = (
 				513411E41D1501D000DC684D /* RoomCollectionVC.swift */,
 				513411E21D1501AE00DC684D /* CreateRoomVC.swift */,
-				51F396F81D15215D0014CDCE /* ChatVC.swift */,
 				51F10B881D16A06900FA9FC0 /* JSQChatVC.swift */,
 			);
 			name = "Chat Room";
@@ -328,7 +322,6 @@
 				513411E31D1501AE00DC684D /* CreateRoomVC.swift in Sources */,
 				51F3970A1D1565190014CDCE /* RoomCollectionViewCell.swift in Sources */,
 				51F3970C1D1566FA0014CDCE /* Room.swift in Sources */,
-				51F396F91D15215D0014CDCE /* ChatVC.swift in Sources */,
 				51F397081D15460A0014CDCE /* ProgressHUD.m in Sources */,
 				51D9C5441D17E6F900C0097B /* Constants.swift in Sources */,
 				513411E71D1502A700DC684D /* ProfileTableVC.swift in Sources */,
@@ -338,7 +331,6 @@
 				513411DF1D14FFC900DC684D /* SignUpVC.swift in Sources */,
 				513411C71D14FEAC00DC684D /* AppDelegate.swift in Sources */,
 				513411E51D1501D000DC684D /* RoomCollectionVC.swift in Sources */,
-				51F10B871D1668D800FA9FC0 /* ChatTableViewCell.swift in Sources */,
 				51F396FF1D153E510014CDCE /* DataService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
