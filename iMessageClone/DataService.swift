@@ -47,6 +47,7 @@ class DataService {
     var fileUrl: String!
     
     var profileImage: UIImage?
+    var allProfileImage = [String: NSData]()
     
     //MARK: - Authentication
     
@@ -196,12 +197,6 @@ class DataService {
     
 
     
-    func getAllUsersProfileImagesFromServer() {
-        USER_REF.observeEventType(.Value, withBlock: {snapshot in
-            
-        })
-    }
-    
     func getUserProfileImageFromServerWithPath(path: String) {
         storageRef.child(path).dataWithMaxSize(INT64_MAX) { (data, error) in
             if let error = error {
@@ -211,6 +206,25 @@ class DataService {
             self.profileImage = UIImage.init(data: data!)
         }
         
+    }
+    
+    func getAllUserProfiles () {
+        MESSAGE_REF.observeEventType(.Value, withBlock: {snapshot in
+            let dict = snapshot.value as! [String: AnyObject]
+            for (_, value) in dict {
+                let userInfo = value as! [String: String]
+                let senderID: String! = userInfo["senderID"]
+                FIRStorage.storage().referenceForURL("gs://imessageclone.appspot.com/profileImage/\(senderID)").dataWithMaxSize(INT64_MAX) { (data, error) in
+                    if let error = error {
+                        print(error.localizedDescription)
+                        return
+                    }
+                    self.allProfileImage[senderID] = data
+                }
+                
+            }
+            
+        })
     }
 
     //MARK: - Room
@@ -245,9 +259,10 @@ class DataService {
     //MARK: - Message
     func createNewMessage(userID: String, roomID: String, textMessage: String) {
         let idMessage = roomRef.child("messages").childByAutoId()
-        MESSAGE_REF.child(idMessage.key).setValue(["message": textMessage, "senderID": userID])
+        MESSAGE_REF.child(idMessage.key).setValue(["senderID": userID, "textMessage": textMessage])
         ROOM_REF.child(roomID).child("messages").child(idMessage.key).setValue(true)
     }
+    
     
     func fetchMessageFromServer(roomID: String, callback: (FIRDataSnapshot) -> ()) {
         ROOM_REF.child(roomID).child("messages").observeEventType(.ChildAdded, withBlock: {snapshot in

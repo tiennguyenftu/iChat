@@ -27,6 +27,9 @@ class RoomCollectionVC: UICollectionViewController, UICollectionViewDelegateFlow
             let indexPath = NSIndexPath(forItem: self.rooms.count - 1, inSection: 0)
             self.collectionView?.insertItemsAtIndexPaths([indexPath])
         }
+        
+        DataService.dataService.getAllUserProfiles()
+        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -79,8 +82,7 @@ class RoomCollectionVC: UICollectionViewController, UICollectionViewDelegateFlow
             if let user = DataService.dataService.currentUser {
                 jsqChatVC.senderId = user.uid
                 jsqChatVC.senderDisplayName = user.displayName
-                
-            
+                jsqChatVC.outgoingImage = DataService.dataService.profileImage
             }
 
         }

@@ -40,7 +40,7 @@ class ChatVC: UIViewController {
         self.messageTextField.resignFirstResponder()
         if messageTextField.text != "" {
             if let user = FIRAuth.auth()?.currentUser {
-                DataService.dataService.createNewMessage(user.uid, roomID: roomID, textMessage: messageTextField.text!)
+//                DataService.dataService.createNewMessage(user.uid, roomID: roomID, textMessage: messageTextField.text!)
             } else {
                 //No user signed in
             }

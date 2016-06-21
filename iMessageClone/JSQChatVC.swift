@@ -8,41 +8,64 @@
 
 import UIKit
 import JSQMessagesViewController
+import FirebaseStorage
 
 class JSQChatVC: JSQMessagesViewController {
+    
     
     var roomID: String!
     var messages = [JSQMessage]()
     var outgoingBubbleImageView: JSQMessagesBubbleImage!
     var incomingBubbleImageView: JSQMessagesBubbleImage!
     
-    var outgoingId = String()
-    var incomeingId = [String]()
     
-    var outgoingImage: [UIImage]!
+    var outgoingImage: UIImage!
     var incomingImage: [UIImage]!
+    
+    var profileImages =  [UIImage]()
     
     var imagePicker = UIImagePickerController()
     var imageToSent: UIImage!
-    var avatars = [String]()
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         title = "Chat"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Refresh, target: self, action: #selector(JSQChatVC.reloadCollectionView))
+        
         setupBubbles()
         
         collectionView!.collectionViewLayout.incomingAvatarViewSize = CGSize(width: kJSQMessagesCollectionViewAvatarSizeDefault, height: kJSQMessagesCollectionViewAvatarSizeDefault)
         collectionView!.collectionViewLayout.outgoingAvatarViewSize = CGSize(width: kJSQMessagesCollectionViewAvatarSizeDefault, height: kJSQMessagesCollectionViewAvatarSizeDefault)
         
         keyboardController.textView.delegate = self
-        let dismissKeyboardGesture = UITapGestureRecognizer(target: self, action: #selector(SignUpVC.dismissKeyboard(_:)))
+        let dismissKeyboardGesture = UITapGestureRecognizer(target: self, action: #selector(JSQChatVC.dismissKeyboard(_:)))
         dismissKeyboardGesture.numberOfTapsRequired = 1
         view.addGestureRecognizer(dismissKeyboardGesture)
         
-        fetchUserData()
+        automaticallyScrollsToMostRecentMessage = true
 
+        fetchData()
+    }
+    
+    func fetchData() {
+        DataService.dataService.fetchMessageFromServer(roomID) { (snapshot) in
+            if let text = snapshot.value!["textMessage"] as? String, let senderID = snapshot.value!["senderID"] as? String {
+                self.addMessage(senderID, text: text)
+                self.finishSendingMessage()
+            }
+        }
+
+    }
+    
+    func reloadCollectionView() {
+        collectionView.reloadData()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        DataService.dataService.getAllUserProfiles()
     }
     
     func setupBubbles() {
@@ -54,40 +77,10 @@ class JSQChatVC: JSQMessagesViewController {
     }
     
     
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-        automaticallyScrollsToMostRecentMessage = true
-        DataService.dataService.fetchMessageFromServer(roomID) { (snapshot) in
-            if let text = snapshot.value!["message"] as? String, let senderID = snapshot.value!["senderID"] as? String {
-                self.addMessage(senderID, text: text)
-                self.finishSendingMessage()
-            }
-        }
-    }
-    
     func addMessage(id: String, text: String) {
         let message = JSQMessage(senderId: id, displayName: "", text: text)
         messages.append(message)
     }
-    
-
-    func fetchUserData() {
-        DataService.dataService.USER_REF.observeEventType(.Value, withBlock: {snapshot in
-            let dict = snapshot.value as! [String: AnyObject]
-            for (userId, _) in dict {
-                if userId == self.senderId {
-                    self.outgoingId = userId
-                    
-                    
-                } else {
-                    self.incomeingId.append(userId)
-                }
-            }
-            print(self.outgoingId)
-            print(self.incomeingId)
-        })
-    }
-    
     
     
     //MARK: - Data source
@@ -98,16 +91,19 @@ class JSQChatVC: JSQMessagesViewController {
             as! JSQMessagesCollectionViewCell
         
         let message = messages[indexPath.item]
+//        cell.avatarImageView.layer.cornerRadius = kJSQMessagesCollectionViewAvatarSizeDefault / 2
+//        cell.avatarImageView.clipsToBounds = true
+//        cell.avatarImageView.image = UIImage(named: "profileImage")
+        
         
         if message.senderId == senderId {
             if let textView = cell.textView {
                 textView.textColor = UIColor.whiteColor()
-                cell.avatarImageView.image = UIImage(named: "profileImage")
             }
         } else {
             cell.textView!.textColor = UIColor.blackColor()
-            cell.avatarImageView.image = UIImage(named: "logo")
         }
+        
         
         return cell
     }
@@ -135,7 +131,16 @@ class JSQChatVC: JSQMessagesViewController {
     override func collectionView(collectionView: JSQMessagesCollectionView!,
                                  avatarImageDataForItemAtIndexPath indexPath: NSIndexPath!) -> JSQMessageAvatarImageDataSource! {
         
-        return nil
+        let avatar = JSQMessagesAvatarImage(avatarImage: nil, highlightedImage: nil, placeholderImage: UIImage(named: "profileImage"))
+        let message = messages[indexPath.item]
+        if message.senderId == senderId {
+            avatar.avatarImage = outgoingImage
+        } else {
+            let imageData = DataService.dataService.allProfileImage[message.senderId]
+            avatar.avatarImage = UIImage.init(data: imageData!)
+        }
+        
+        return avatar
     }
     
     
@@ -148,13 +153,13 @@ class JSQChatVC: JSQMessagesViewController {
     
     override func didPressAccessoryButton(sender: UIButton!) {
         print("Accessory Button Pressed")
-//        let actionSheet = UIAlertController(title: "Send", message: "", preferredStyle: .ActionSheet)
-//        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
-//        actionSheet.addAction(UIAlertAction(title: "Photo", style: .Default) { action in
-//            self.choosePhoto()
-//        })
-//        
-//        presentViewController(actionSheet, animated: true, completion: nil)
+        let actionSheet = UIAlertController(title: "Send", message: "", preferredStyle: .ActionSheet)
+        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
+        actionSheet.addAction(UIAlertAction(title: "Photo", style: .Default) { action in
+            self.choosePhoto()
+        })
+        
+        presentViewController(actionSheet, animated: true, completion: nil)
     }
     
     func choosePhoto() {
@@ -168,34 +173,23 @@ class JSQChatVC: JSQMessagesViewController {
         let photoItem = JSQPhotoMediaItem(image: imageToSent)
         let message = JSQMessage.init(senderId: senderId, displayName: senderDisplayName, media: photoItem)
         messages.append(message)
+        collectionView.reloadData()
         
     }
     
     override func collectionView(collectionView: JSQMessagesCollectionView!, attributedTextForCellTopLabelAtIndexPath indexPath: NSIndexPath!) -> NSAttributedString! {
-        if indexPath.item == 0 {
-            return JSQMessagesTimestampFormatter.sharedFormatter().attributedTimestampForDate(messages[0].date)
+        if indexPath.item % 10 == 0 {
+            return JSQMessagesTimestampFormatter.sharedFormatter().attributedTimestampForDate(messages[indexPath.item].date)
         }
 
-        let lastMessage = messages[indexPath.item - 1]
-        let currentMessage = messages[indexPath.item]
-        if currentMessage.date.timeIntervalSinceDate(lastMessage.date) >= 5 * 60 * 60 {
-            return JSQMessagesTimestampFormatter.sharedFormatter().attributedTimestampForDate(currentMessage.date)
-        }
-        
         return nil
     }
     
     override func collectionView(collectionView: JSQMessagesCollectionView!, layout collectionViewLayout: JSQMessagesCollectionViewFlowLayout!, heightForCellTopLabelAtIndexPath indexPath: NSIndexPath!) -> CGFloat {
-        if indexPath.item == 0 {
+        if indexPath.item % 10 == 0 {
             return kJSQMessagesCollectionViewCellLabelHeightDefault
         }
-        
-        let lastMessage = messages[indexPath.item - 1]
-        let currentMessage = messages[indexPath.item]
-        if currentMessage.date.timeIntervalSinceDate(lastMessage.date) >= 5 * 60 * 60 {
-            return kJSQMessagesCollectionViewCellLabelHeightDefault
-        }
-        
+
         return 0
     }
     
